@@ -13,6 +13,11 @@
       crossorigin="anonymous"
     />
     <!--  -->
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- aos css end -->
+
     <!-- bootstrap icons -->
     <link
       rel="stylesheet"
@@ -28,72 +33,83 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <!-- header -->
-    <header id="header" class="fixed-top">
-      <div class="container align-items-center">
-        <div class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="index.html">LOGO</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbartoggler"
-            aria-controls="navbartoggler"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav
+      class="navbar navbar-expand-md justify-content-center fixed-top"
+      id="nav"
+    >
+      <div class="container" id="navContainer">
+        <a class="navbar-brand" href="index.html">LOGO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbartoggler"
+          aria-controls="navbartoggler"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list"></i>
+        </button>
 
-          <!-- navbar ul -->
-          <div class="collapse navbar-collapse navbarUl" id="navbartoggler">
-            <ul class="navbar-nav">
-              <!-- li -->
-              <li class="nav-item">
-                <a href="#">Home</a>
-              </li>
-              <!-- li -->
+        <!-- navbar ul -->
+        <div class="collapse navbar-collapse navbarUl" id="navbartoggler">
+          <ul class="navbar-nav">
+            <!-- li -->
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <!-- li -->
 
-              <!-- li -->
-              <li class="ext-center dropdown">
-                <a href="#"
-                  >Cards<i class="bi bi-chevron-down arrowDown"></i
-                ></a>
-                <ul class="dropdownUl">
-                  <li>
-                    <a href="#"
-                      >Free Cards<i class="bi bi-arrow-right arrowRight"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      >Premium Cards<i class="bi bi-arrow-right arrowRight"></i
-                    ></a>
-                  </li>
-                </ul>
-              </li>
-              <!-- li -->
+            <!-- li -->
+            <li class="dropdown">
+              <a>Cards<i class="bi bi-chevron-down arrowDown"></i></a>
+              <ul class="dropdownUl">
+                <li>
+                  <a href="./pages/free-cards.html"
+                    >Free Cards<i class="bi bi-arrow-right arrowRight"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="./pages/premium-cards.html"
+                    >Premium Cards<i class="bi bi-arrow-right arrowRight"></i
+                  ></a>
+                </li>
+              </ul>
+            </li>
+            <!-- li -->
 
-              <!-- li -->
-              <li class="nav-item">
-                <a href="">Contact</a>
-              </li>
-              <!-- li -->
-            </ul>
-          </div>
-          <!-- navbar ul end -->
+            <!-- li dropdown responsive -->
+            <li class="dropdownMobile">
+              <a>Cards<i class="bi bi-chevron-right arrowRightMobile"></i></a>
+              <ul class="dropdownUlMobile">
+                <li>
+                  <a href="./pages/free-cards.html"
+                    >Free Cards<i class="bi bi-arrow-right arrowRight"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="./pages/premium-cards.html"
+                    >Premium Cards<i class="bi bi-arrow-right arrowRight"></i
+                  ></a>
+                </li>
+              </ul>
+            </li>
+            <!-- li -->
+
+            <!-- li -->
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <!-- li -->
+          </ul>
         </div>
+        <!-- navbar ul end -->
       </div>
-    </header>
-    <!-- header end -->
+    </nav>
 
     <!-------------------- hero -------------------->
-    <section id="hero">
-      <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide carousel-fade"
-        data-ride="carousel"
-      >
+    <section id="hero" data-aos="zoom-out">
+      <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade">
         <div class="carousel-inner">
           <!-- slide 1 -->
           <div
@@ -137,17 +153,24 @@
     <!------------------------- main ----------------------------->
     <main id="main">
       <!------------ steps  -------------->
-      <section class="steps">
+      <section class="steps" data-aos="fade-up">
         <div class="container align-items-center">
           <div class="container text-center" style="display: block">
             <h3>Very easy to use.</h3>
           </div>
-          <div class="container">
-            <p><i class="bi bi-check2"></i>Select a design of your choice.</p>
-            <p>
-              <i class="bi bi-download"></i>Click on the download button to
-              download your selected design.
-            </p>
+          <div class="container d-md-flex justify-content-center">
+            <div class="container text-center">
+              <p>
+                <i class="bi bi-check2 mb-md-3"></i> <br />Select a design of
+                your choice.
+              </p>
+            </div>
+            <div class="container text-center">
+              <p>
+                <i class="bi bi-download mv-md-3"></i> <br />
+                Click on the download button to download your selected design.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -156,65 +179,198 @@
       <!------------ designs --------------->
       <section class="designs">
         <!-- free designs -->
-        <div class="container align-items-center text-center">
+        <div
+          class="container justify-content-center align-items-center text-center"
+          data-aos="fade-up"
+        >
           <h3>Have a look at our Free Designs</h3>
           <p>We have all that you need to build an attractive visiting card.</p>
         </div>
-        <div class="container designContainer">
-          <!-- row 1 -->
-          <div class="row align-items-center justify-content-center designRow">
-            <div class="col-lg-3 col-md-6 card">
-              <h3>ROW1</h3>
+        <div class="container designcenterbox">
+          <div
+            class="container justify-content-center align-items-center designContainer"
+          >
+            <!-- row 1 -->
+            <div class="row justify-content-center designRow">
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-right"
+                aos-delay="500"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW1</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-up"
+                aos-delay="500"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW1</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-left"
+                aos-delay="500"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW1</h3>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW1</h3></div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW1</h3></div>
-          </div>
-          <!-- row 1 -->
+            <!-- row 1 -->
 
-          <!-- row 2 -->
-          <div class="row align-items-center justify-content-center designRow">
-            <div class="col-lg-3 col-md-6 card"><h3>ROW2</h3></div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW2</h3></div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW2</h3></div>
-          </div>
-          <!-- row 2 -->
+            <!-- row 2 -->
+            <div class="row justify-content-center designRow">
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-right"
+                aos-delay="500"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW2</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-up"
+                aos-delay="500"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW2</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-left"
+                aos-delay="500"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW2</h3>
+              </div>
+            </div>
+            <!-- row 2 -->
 
-          <div class="container align-items-center viewmore">
-            <a href="#">View More Free Cards</a>
+            <div
+              class="container align-items-center justify-content-center viewmore"
+            >
+              <a href="./pages/free-cards.html"
+                >View More Free Cards
+                <i class="bi bi-arrow-right arrowRightDesign"></i
+              ></a>
+            </div>
           </div>
+          <!-- free designs end -->
         </div>
-        <!-- free designs end -->
 
         <!-- premium designs -->
         <!-- free designs -->
-        <div class="container align-items-center text-center">
+        <div class="container text-center" data-aos="fade-up">
           <h3>Have a look at our Premium Designs</h3>
           <p>
             Get a taste of more classic, neat, and eye catchy cards in our
             Premium Designs.
           </p>
         </div>
-        <div class="container designContainer">
-          <!-- row 1 -->
-          <div class="row align-items-center justify-content-center designRow">
-            <div class="col-lg-3 col-md-6 card">
-              <h3>ROW1</h3>
+        <div class="container designcenterbox">
+          <div class="container designContainer">
+            <!-- row 1 -->
+            <div class="row justify-content-center designRow">
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-right"
+                aos-delay="300"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW1</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-up"
+                aos-delay="300"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW1</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-left"
+                aos-delay="300"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW1</h3>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW1</h3></div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW1</h3></div>
-          </div>
-          <!-- row 1 -->
+            <!-- row 1 -->
 
-          <!-- row 2 -->
-          <div class="row align-items-center justify-content-center designRow">
-            <div class="col-lg-3 col-md-6 card"><h3>ROW2</h3></div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW2</h3></div>
-            <div class="col-lg-3 col-md-6 card"><h3>ROW2</h3></div>
-          </div>
-          <!-- row 2 -->
+            <!-- row 2 -->
+            <div class="row justify-content-center designRow">
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-right"
+                aos-delay="300"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW2</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-up"
+                aos-delay="300"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW2</h3>
+              </div>
+              <div
+                class="col-lg-3 col-md-3 card"
+                data-aos="fade-left"
+                aos-delay="300"
+              >
+                <div class="container-fluid btnContainer">
+                  <a href="#">EDIT</a>
+                  <a href="#">DOWNLOAD</a>
+                </div>
+                <h3>ROW2</h3>
+              </div>
+            </div>
+            <!-- row 2 -->
 
-          <div class="container align-items-center viewmore">
-            <a href="#">View More Premium Cards</a>
+            <div class="container align-items-center viewmore">
+              <a href="./pages/premium-cards.html"
+                >View More Premium Cards
+                <i class="bi bi-arrow-right arrowRightDesign"></i
+              ></a>
+            </div>
           </div>
         </div>
         <!-- free designs end -->
@@ -230,7 +386,7 @@
         <!-- row -->
         <div class="row">
           <!-- col 1 -->
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 footerContainer">
             <div class="container">
               <h3>Links</h3>
             </div>
@@ -247,7 +403,7 @@
           <!-- col 1 -->
 
           <!-- col 2 -->
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 footerContainer">
             <div class="container">
               <h3>Links</h3>
             </div>
@@ -264,7 +420,7 @@
           <!-- col 2 -->
 
           <!-- col 3 -->
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 footerContainer">
             <div class="container">
               <h3>Links</h3>
             </div>
@@ -281,7 +437,7 @@
           <!-- col 3 -->
 
           <!-- col 4 -->
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 footerContainer">
             <div class="container">
               <h3>Links</h3>
             </div>
@@ -327,6 +483,14 @@
       crossorigin="anonymous"
     ></script>
     <!-- bootstrap js -->
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- aos -->
+
     <script src="./js/main.js"></script>
   </body>
 </html>

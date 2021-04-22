@@ -201,94 +201,51 @@ nav {
   visibility: visible;
 }
 
-/*------------------- Hero ------------------ */
-#hero {
-  height: 80vh;
-  position: relative;
-  z-index: -1;
-  /* position: relative */
-}
-
-.imgContainer {
-  opacity: 0;
-  transition-duration: 0.6s all ease;
-  transition-property: opacity;
-}
-
-.imgContainer .active {
-  opacity: 1;
-}
-
-.imgContainer {
-  position: relative;
-  text-align: center;
-  height: 80vh;
-  background-size: cover;
+/*------------------- hero------------------ */
+.heroImg {
+  width: 100%;
+  height: 50vh;
+  background-image: url("../img/bg-free2.jpg");
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
   background-attachment: fixed;
 }
 
-.imgContainer::before {
+.heroImg::before {
   content: "";
-  background: rgba(255, 255, 255, 0.404);
   position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  background: rgba(255, 255, 255, 0.589);
+  /* background: rgba(0, 0, 0, 0.24); */
 }
 
-.imgContainer > .container {
+.heroImg > .container {
   position: relative;
-  height: 100%;
-  justify-content: center;
+  padding: 150px 0px;
+  text-align: center;
+  text-transform: capitalize;
 }
-
-.imgContainer > .container > h3 {
-  color: #222222;
-}
-
-/* ----------- main -------------- */
-
-/* ----------- steps ------------- */
-.steps {
-  background-color: #f6f9fe;
-  padding: 50px 0px;
+/*------------------- main------------------ */
+#main {
+  background-color: #f6f6f6;
+  padding: 0px 100px;
   position: relative;
 }
 
-.steps .container h3 {
-  color: #106eea;
-}
-
-.steps .container p {
-  font-size: 18px;
-  position: relative;
-  margin: 0px 50px;
-  padding: 15px 0px;
-  color: #222222;
-}
-
-#main .container p i {
-  margin-right: 10px;
-}
-
-/* ----------- designs ------------- */
-.designs {
-  padding: 50px 0px;
-  overflow: hidden;
-}
-
-.designs > .container > h3 {
-  color: #106eea;
-}
-
-.designContainer {
+/* -----------cardsDisplay-------------- */
+.cardsDisplay {
+  background-color: #f6f6f9;
   padding: 50px 0px;
 }
 
-/* ------------ free ------------- */
+.cardsDisplay > .container {
+  margin: 50px 0px;
+}
 
 .designRow {
   margin: 20px 0px;
@@ -352,35 +309,32 @@ nav {
   color: #ffffff;
 }
 
-.viewmore {
-  position: relative;
-  text-align: center;
-  margin: 50px 0px;
-}
-
-.viewmore a {
-  font-size: 20px;
-  text-decoration: none;
-  padding: 5px 15px;
-  color: #fff;
-  background-color: #106eea;
-  position: relative;
-  transition: 0.1s ease;
-}
-
-.viewmore a:hover {
-  background-color: #fff;
+/* classic */
+.classic p span {
   color: #106eea;
+}
+
+.classic a {
+  margin-left: 5px;
+  padding: 5px 15px;
+  text-decoration: none;
+  background-color: #106eea;
+  color: #ffffff;
+  transition: 0.2s all ease;
 }
 
 .arrowRightDesign {
-  margin-left: -5px;
+  margin-left: 0px;
   visibility: hidden;
-  color: #106eea;
-  transition: 0.1s all ease;
+  transition: 0.2s all ease;
 }
 
-.viewmore a:hover .arrowRightDesign {
+.classic a:hover {
+  background-color: transparent;
+  color: #106eea;
+}
+
+.classic a:hover .arrowRightDesign {
   margin-left: 10px;
   visibility: visible;
 }
@@ -417,6 +371,7 @@ footer > .container {
   color: #f6f9fe;
 }
 
+/* ============================ media queries =================================== */
 /*------------================ media query ================------------- */
 @media only screen and (min-width: 768px) {
   .dropdown {
@@ -443,40 +398,5 @@ footer > .container {
 
   .dropdownMobile {
     display: block;
-  }
-
-  .designContainer {
-    margin: 0px 0px 0px 0px !important;
-  }
-
-  .designRow {
-    padding: 0px 30px;
-    margin: 0px 0px;
-  }
-
-  .designRow .col-lg-3 {
-    padding: 50px 30px;
-    width: 300px;
-    height: 200px;
-    margin-top: 20px;
-  }
-
-  footer > .container {
-    margin: 0px 0px 0px 0px !important;
-    padding: 20px 50px;
-  }
-
-  .footerContainer {
-    padding: 0px 0px !important;
-  }
-
-  .footerContainer .container {
-    padding: 0px 0px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .viewmore a {
-    font-size: 15px;
   }
 }
