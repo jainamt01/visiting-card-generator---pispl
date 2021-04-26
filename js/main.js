@@ -1,56 +1,84 @@
+//
+//
+//
+// navbar
 const nav = document.getElementById("nav");
 
-if (window.matchMedia("(min-width: 1200px)").matches) {
-  /* The viewport is less than, or equal to, 1200 pixels wide */
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 60) {
-      nav.style.padding = "10px 100px";
-      nav.style.backgroundColor = "#fff";
-      nav.classList.add("shadow");
-    } else {
-      nav.style.padding = "20px 100px";
-      nav.style.backgroundColor = "transparent";
-      nav.classList.remove("shadow");
-    }
-  });
-} else {
-  /* The viewport is greater than 700 pixels wide */
-  //   nav.style.padding = "20px 100px";
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 200) {
+    nav.style.marginTop = "0px";
+    nav.style.backgroundColor = "#FFFFFF";
+    nav.classList.add("shadow");
+  } else {
+    nav.style.marginTop = "20px";
+    nav.style.backgroundColor = "transparent";
+    nav.classList.remove("shadow");
+  }
+});
+
+//
+//
+//
+//
+// front back preview
+
+const frontPath = document.getElementById("front").src;
+const backPath = document.getElementById("back").src;
+
+const front = document.getElementById("front");
+const back = document.getElementById("back");
+
+front.addEventListener("click", function () {
+  document.getElementById("preview").src = frontPath;
+});
+
+back.addEventListener("click", function () {
+  document.getElementById("preview").src = backPath;
+});
+
+//
+//
+//
+//
+// download btn
+
+const download = document.getElementById("downloadBtnFree");
+const overlay = document.querySelector(".overlay");
+const popup = document.getElementById("popUP");
+const submit = document.getElementById("formSubmitBtn");
+const close = document.getElementById("close");
+
+function disableScrolling() {
+  var x = window.scrollX;
+  var y = window.scrollY;
+  window.onscroll = function () {
+    window.scrollTo(x, y);
+  };
 }
 
-// for 700 and below
-
-if (window.matchMedia("(min-width: 700px)").matches) {
-  /* The viewport is less than, or equal to, 700 pixels wide */
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 60) {
-      nav.style.padding = "0px 100px";
-      nav.style.backgroundColor = "#fff";
-      nav.classList.add("shadow");
-    } else {
-      nav.style.padding = "20px 100px";
-      nav.style.backgroundColor = "transparent";
-      nav.classList.remove("shadow");
-    }
-  });
-} else {
-  /* The viewport is greater than 700 pixels wide */
-  //   nav.style.padding = "20px 100px";
+function enableScrolling() {
+  window.onscroll = function () {};
 }
 
-if (window.matchMedia("(max-width: 600px)").matches) {
-  /* The viewport is less than, or equal to, 700 pixels wide */
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 10) {
-      nav.style.padding = "0px 30px";
-      nav.style.backgroundColor = "#fff";
-      nav.classList.add("shadow");
-    } else {
-      nav.style.padding = "10px 0px";
-      nav.style.backgroundColor = "transparent";
-      nav.classList.remove("shadow");
-    }
-  });
-} else {
-  /* The viewport is greater than 700 pixels wide */
+download.addEventListener("click", function () {
+  overlay.style.display = "block";
+  popup.style.visibility = "visible";
+  popup.style.opacity = "1";
+  nav.style.display = "none";
+  disableScrolling();
+});
+
+close.addEventListener("click", function () {
+  overlay.style.display = "none";
+  popup.style.visibility = "hidden";
+  popup.style.opacity = "0";
+  nav.style.display = "block";
+  enableScrolling();
+});
+
+function getName() {
+  let x = document.getElementById("getCardName").innerText;
+  document.getElementById("setCardName").innerText = x;
 }
+
+getName();
